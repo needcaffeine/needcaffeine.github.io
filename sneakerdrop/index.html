@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sneakerhead Signup</title>
+    </head>
+    <body>
+        <h1>Sign up for the latest information on sneaker drops!</h1>
+        <p>Enter your contact information if you would like to receive alerts about the best sneakers as soon as they
+            drop.</p>
+        <!--Location for users to enter their information to receive the sneakerhead newsletter-->
+        <form name="sneakersignup" onsubmit="identify(event)">
+            <br> <br>
+            Name: <input name="fullname" required="" size="60" type="text" />
+            <br> <br>
+            Email: <input name="email" required="" size="60" type="email" />
+            <br> <br>
+            <label for="shoeType">Preferred Shoe</label>
+            <select id="shoeType" name="shoeType">
+                <option value="Running">Running</option>
+                <option value="Cross Trainers">Cross Trainers</option>
+                <option value="Sports">Sports</option>
+            </select>
+            <br> <br>
+            <input name="submit" type="submit" value="submit" /> </form>
+        <br>
+
+        <script type="text/javascript">
+            function identify(e) {
+
+                e.preventDefault();
+                var form = e.target;
+                var email = form["email"].value;
+                var fullname = form["fullname"].value;
+                var shoeType = form["shoeType"].value;
+                var user = {
+                    email: email,
+                    name: fullname
+                };
+            }
+        </script>
+    </body>
+</html>
